@@ -1,0 +1,31 @@
+# Instance de TEST, séparée de la vraie : port 8081 et volume de données à part.
+# Port déjà pris sur la machine ? `make e2e TEST_PORT=8091` (variable TEST_PORT, 8081 par défaut).
+# Utilisée par `make e2e` (les scénarios Playwright effacent et recréent les données à chaque test).
+#   docker compose -p orgchart-test -f docker-compose.test.yml up -d --build --wait
+services:
+  backend:
+    build: ./backend
+    volumes:
+      - org-data-test:/data
+    environment:
+      - DATABASE_URL=sqlite:////data/org.db
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop: [ALL]
+    security_opt:
+      - no-new-privileges:true
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "127.0.0.1:${TEST_PORT:-8081}:8080"
+    cap_drop: [ALL]
+    security_opt:
+      - no-new-privileges:true
+    depends_on:
+      backend:
+        condition: service_healthy
+
+volumes:
+  org-data-test:

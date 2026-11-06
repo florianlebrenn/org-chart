@@ -1,0 +1,17 @@
+{
+  "name": "organigramme-e2e",
+  "private": true,
+  "type": "module",
+  "description": "Scénarios Playwright rejouables (mode serveur Docker + mode autonome)",
+  "scripts": {
+    "test": "playwright test",
+    "headed": "playwright test --headed",
+    "ui": "playwright test --ui",
+    "report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0"
+  },
+  "author": "Florian Le Brenn (https://www.linkedin.com/in/florianlebrenn/)",
+  "license": "MIT"
+}

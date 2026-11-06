@@ -1,0 +1,44 @@
+# Mises à jour automatiques des dépendances (propositions de PR, à relire et tester).
+# cooldown : une nouvelle version n'est proposée qu'après 14 jours (protection contre les paquets piégés).
+version: 2
+updates:
+  - package-ecosystem: uv           # pyproject.toml + uv.lock
+    directory: /backend
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 14
+    groups:
+      python:
+        patterns: ["*"]
+
+  - package-ecosystem: npm
+    directory: /frontend
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 14
+    groups:
+      interface:
+        patterns: ["*"]
+
+  - package-ecosystem: npm
+    directory: /e2e
+    schedule:
+      interval: monthly
+    cooldown:
+      default-days: 14
+
+  - package-ecosystem: docker
+    directories: ["/backend", "/frontend"]
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 14
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    cooldown:
+      default-days: 14

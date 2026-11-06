@@ -1,0 +1,36 @@
+# Application Organigramme : http://localhost:8080
+#
+# Sécurité :
+# - le port n'écoute que sur cette machine (127.0.0.1) : rien n'est accessible depuis le réseau local.
+#   Pour un usage en réseau, voir README (section Sécurité) : il faut un reverse proxy HTTPS.
+# - conteneurs sans privilèges (utilisateur non-root, aucune capacité Linux, no-new-privileges),
+#   backend en lecture seule hors du volume de données.
+services:
+  backend:
+    build: ./backend
+    volumes:
+      - org-data:/data
+    environment:
+      - DATABASE_URL=sqlite:////data/org.db
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop: [ALL]
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "127.0.0.1:8080:8080"
+    cap_drop: [ALL]
+    security_opt:
+      - no-new-privileges:true
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  org-data:

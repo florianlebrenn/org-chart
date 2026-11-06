@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Org Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <style>
+      body { 
+        font-family: system-ui, sans-serif; 
+        margin: 2rem; 
+        background-color: #f5f5f5;
+      }
+      .container {
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      }
+      .error {
+        color: #d32f2f;
+        padding: 1rem;
+        background: #ffebee;
+        border-radius: 4px;
+        margin: 1rem 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Organization Chart</h1>
+      <div id="mermaid-container">
+        <pre class="mermaid" id="mermaid-diagram">
+          Loading chart...
+        </pre>
+      </div>
+    </div>
+    
+    <script>
+      mermaid.initialize({ startOnLoad: false });
+      
+      async function loadChart() {
+        try {
+          const response = await fetch('../output/org_chart.mmd');
+          if (!response.ok) {
+            throw new Error(`Failed to load chart: ${response.status}`);
+          }
+          const mermaidCode = await response.text();
+          const element = document.getElementById('mermaid-diagram');
+          element.textContent = mermaidCode;
+          mermaid.init(undefined, element);
+        } catch (error) {
+          document.getElementById('mermaid-container').innerHTML = 
+            `<div class="error">
+              Error loading chart: ${error.message}<br>
+              Make sure to run the script first: <code>node index.js</code>
+            </div>`;
+        }
+      }
+      
+      loadChart();
+    </script>
+  </body>
+</html>

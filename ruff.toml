@@ -1,0 +1,16 @@
+# ruff : analyse (ruff check) et mise en forme (ruff format) du code Python du dépôt —
+# backend/, tools/, skills/. Version figée dans backend/pyproject.toml (groupe dev).
+#
+#   make lint      vérifier (analyse + format), comme la CI et le contrôle avant commit
+#   make format    corriger ce qui peut l'être automatiquement, puis reformater
+#
+# Règles : jeu par défaut de ruff (erreurs, imports, bugbear, simplifications, modernisation…).
+# La sécurité du code est vérifiée à part par bandit.
+target-version = "py312"
+line-length = 120
+# Python uniquement : les exemples de code dans la documentation (.md) restent tels qu'écrits.
+extend-exclude = ["*.md"]
+
+[format]
+# Code existant écrit avec des guillemets doubles ; ruff format garde ce style.
+quote-style = "double"

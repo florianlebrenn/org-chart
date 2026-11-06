@@ -1,0 +1,45 @@
+# Contrôles lancés automatiquement avant chaque commit.
+# Installation (une fois) : make hooks        Lancer sur tout le dépôt : pre-commit run --all-files
+# Versions figées (tags vérifiés) ; mise à jour : pre-commit autoupdate --freeze, puis relire le diff.
+repos:
+  # Secrets (clés d'API, jetons, mots de passe) dans les fichiers ajoutés au commit
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.30.1
+    hooks:
+      - id: gitleaks          # gitleaks git --pre-commit --redact --staged --verbose
+
+  # Données personnelles : fichiers Excel/CSV/sauvegardes, emails et téléphones réels, n° de sécurité sociale
+  - repo: local
+    hooks:
+      - id: donnees-personnelles
+        name: Pas de données personnelles réelles (AGENTS.md §1)
+        entry: python3 tools/hooks/check_data_files.py
+        language: system
+        types: [file]
+
+  # Contrôles génériques
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: detect-private-key
+      - id: check-added-large-files
+        args: ["--maxkb=600"]   # static/organigramme.html ≈ 380 Ko
+      - id: check-merge-conflict
+      - id: check-yaml
+      - id: check-json
+
+  # Analyse et format du code Python (même version que backend/pyproject.toml, réglages dans ruff.toml)
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.17.2
+    hooks:
+      - id: ruff-check
+        args: ["--fix"]
+      - id: ruff-format
+
+  # Analyse de sécurité du code Python
+  - repo: https://github.com/PyCQA/bandit
+    rev: 1.9.4
+    hooks:
+      - id: bandit
+        args: ["-q", "-x", "backend/tests"]
+        files: ^backend/

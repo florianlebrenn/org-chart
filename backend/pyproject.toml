@@ -1,0 +1,44 @@
+# Backend de l'organigramme — dépendances gérées par uv (https://docs.astral.sh/uv/).
+#
+#   uv sync                 installer (crée .venv) à partir de uv.lock
+#   uv run pytest -q        lancer les tests
+#   uv add <paquet>==<x.y>  ajouter une dépendance (met à jour uv.lock)
+#   uv lock --upgrade-package <paquet>   monter une version
+#
+# uv.lock fige TOUTES les dépendances (y compris indirectes) avec leurs empreintes : builds reproductibles.
+[project]
+name = "organigramme-backend"
+version = "1.1.0"
+description = "API locale de l'organigramme (FastAPI + SQLite chiffrée)"
+authors = [{ name = "Florian Le Brenn" }]
+license = "MIT"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi==0.161.1",
+    # starlette et python-multipart épinglés explicitement : versions corrigées (audit de vulnérabilités)
+    "starlette==1.8.0",
+    "uvicorn==0.54.0",
+    "python-multipart==0.0.32",
+    "openpyxl==3.1.5",
+    # protège la lecture des fichiers Excel contre les attaques XML (openpyxl l'utilise automatiquement)
+    "defusedxml==0.7.1",
+    "reportlab==4.4.1",
+    "cryptography==50.0.2",
+]
+
+[dependency-groups]
+dev = [
+    "pytest==8.3.5",
+    "httpx==0.28.1",
+    "ruff==0.17.2",
+]
+
+[tool.uv]
+# application, pas une bibliothèque : rien à construire ni à publier
+package = false
+# règle du projet : aucune version publiée depuis moins de 14 jours (protection contre les paquets piégés)
+exclude-newer = "14 days"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

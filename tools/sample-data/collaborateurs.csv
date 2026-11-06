@@ -1,0 +1,49 @@
+Nom;Prénom;Fonction;Bâtiment de rattachement;Email;Téléphone
+MARCHAND;Hélène;Directrice administrative et financière;Siège - Lyon;helene.marchand@entreprise.test;06 39 98 00 00
+DUBOIS;Claire;Assistante de direction;Siège - Lyon;claire.dubois@entreprise.test;06 39 98 00 01
+LEFÈVRE;François;Responsable comptabilité;Siège - Lyon;francois.lefevre@entreprise.test;06 39 98 00 02
+BENALI;Nadia;Comptable;Siège - Lyon;nadia.benali@entreprise.test;06 39 98 00 03
+ROUX;Julien;Comptable;Siège - Lyon;julien.roux@entreprise.test;06 39 98 00 04
+GARNIER;Sophie;Aide-comptable;Siège - Lyon;sophie.garnier@entreprise.test;06 39 98 00 05
+FONTAINE;Éloïse;Responsable RH;Siège - Lyon;eloise.fontaine@entreprise.test;06 39 98 00 06
+HADDAD;Karim;Chargé de recrutement;Siège - Lyon;karim.haddad@entreprise.test;06 39 98 00 07
+PERRIN;Laura;Gestionnaire paie;Siège - Lyon;laura.perrin@entreprise.test;06 39 98 00 08
+MOREL;Jean-Baptiste;Responsable commercial;Siège - Lyon;jean-baptiste.morel@entreprise.test;06 39 98 00 09
+GIRARD;Camille;Commerciale;Siège - Lyon;camille.girard@entreprise.test;06 39 98 00 10
+BONNET;Thomas;Commercial;Siège - Lyon;thomas.bonnet@entreprise.test;06 39 98 00 11
+MERCIER;Inès;Commerciale;Siège - Lyon;ines.mercier@entreprise.test;06 39 98 00 12
+BLANC;Lucas;Assistant commercial;Siège - Lyon;lucas.blanc@entreprise.test;06 39 98 00 13
+D'ALMEIDA;Marion;Chargée de communication;Siège - Lyon;marion.dalmeida@entreprise.test;06 39 98 00 14
+LAMBERT;Pierre;Responsable informatique;Siège - Lyon;pierre.lambert@entreprise.test;06 39 98 00 15
+CHEVALIER;Yanis;Technicien support;Siège - Lyon;yanis.chevalier@entreprise.test;06 39 98 00 16
+ROUSSEAU;Philippe;Directeur de site;Atelier - Villeurbanne;philippe.rousseau@entreprise.test;06 39 98 00 17
+VINCENT;Sandrine;Assistante de site;Atelier - Villeurbanne;sandrine.vincent@entreprise.test;06 39 98 00 18
+BRAHIMI;Mehdi;Chef d'atelier;Atelier - Villeurbanne;mehdi.brahimi@entreprise.test;06 39 98 00 19
+FAURE;Antoine;Technicien de production;Atelier - Villeurbanne;antoine.faure@entreprise.test;06 39 98 00 20
+ANDRÉ;Julie;Technicienne de production;Atelier - Villeurbanne;julie.andre@entreprise.test;06 39 98 00 21
+GAUTHIER;Romain;Technicien de production;Atelier - Villeurbanne;romain.gauthier@entreprise.test;06 39 98 00 22
+MASSON;Kevin;Opérateur;Atelier - Villeurbanne;kevin.masson@entreprise.test;06 39 98 00 23
+LEMOINE;Amandine;Opératrice;Atelier - Villeurbanne;amandine.lemoine@entreprise.test;06 39 98 00 24
+GUERIN;Bruno;Opérateur;Atelier - Villeurbanne;bruno.guerin@entreprise.test;06 39 98 00 25
+ROBIN;Céline;Responsable qualité;Atelier - Villeurbanne;celine.robin@entreprise.test;06 39 98 00 26
+DIALLO;Ousmane;Technicien qualité;Atelier - Villeurbanne;ousmane.diallo@entreprise.test;06 39 98 00 27
+PICARD;Manon;Technicienne qualité;Atelier - Villeurbanne;manon.picard@entreprise.test;06 39 98 00 28
+ARNAUD;Stéphane;Responsable maintenance;Atelier - Villeurbanne;stephane.arnaud@entreprise.test;06 39 98 00 29
+LOPEZ;David;Technicien de maintenance;Atelier - Villeurbanne;david.lopez@entreprise.test;06 39 98 00 30
+HENRY;Nicolas;Électricien;Atelier - Villeurbanne;nicolas.henry@entreprise.test;06 39 98 00 31
+CARON;Fabien;Mécanicien;Atelier - Villeurbanne;fabien.caron@entreprise.test;06 39 98 00 32
+NOËL;Valérie;Responsable d'entrepôt;Entrepôt - Vénissieux;valerie.noel@entreprise.test;06 39 98 00 33
+FOURNIER;Sébastien;Chef d'équipe logistique;Entrepôt - Vénissieux;sebastien.fournier@entreprise.test;06 39 98 00 34
+BERTRAND;Mathieu;Préparateur de commandes;Entrepôt - Vénissieux;mathieu.bertrand@entreprise.test;06 39 98 00 35
+COLIN;Aurélie;Préparatrice de commandes;Entrepôt - Vénissieux;aurelie.colin@entreprise.test;06 39 98 00 36
+AMRANI;Rachid;Préparateur de commandes;Entrepôt - Vénissieux;rachid.amrani@entreprise.test;06 39 98 00 37
+BARBIER;Émilie;Préparatrice de commandes;Entrepôt - Vénissieux;emilie.barbier@entreprise.test;06 39 98 00 38
+MEYER;Guillaume;Préparateur de commandes;Entrepôt - Vénissieux;guillaume.meyer@entreprise.test;06 39 98 00 39
+DUMONT;Patrick;Chef d'équipe expédition;Entrepôt - Vénissieux;patrick.dumont@entreprise.test;06 39 98 00 40
+LEROY;Christophe;Cariste;Entrepôt - Vénissieux;christophe.leroy@entreprise.test;06 39 98 00 41
+KHELIFI;Samir;Cariste;Entrepôt - Vénissieux;samir.khelifi@entreprise.test;06 39 98 00 42
+ROCHE;Anthony;Cariste;Entrepôt - Vénissieux;anthony.roche@entreprise.test;06 39 98 00 43
+RENARD;Laetitia;Agente d'expédition;Entrepôt - Vénissieux;laetitia.renard@entreprise.test;06 39 98 00 44
+GAILLARD;Isabelle;Gestionnaire de stock;Entrepôt - Vénissieux;isabelle.gaillard@entreprise.test;06 39 98 00 45
+SCHMITT;Alexandre;Aide-gestionnaire de stock;Entrepôt - Vénissieux;alexandre.schmitt@entreprise.test;06 39 98 00 46
+BRUN;Mélanie;Assistante logistique;Entrepôt - Vénissieux;melanie.brun@entreprise.test;06 39 98 00 47

@@ -1,0 +1,138 @@
+[
+  {
+    "name": "Ava Patel",
+    "title": "Chief Executive Officer",
+    "reports": [
+      {
+        "name": "Noah Kim",
+        "title": "Chief Technology Officer",
+        "reports": [
+          {
+            "name": "Nina Kowalski",
+            "title": "Security Lead",
+            "reports": []
+          }
+        ]
+      },
+      {
+        "name": "Vinit Shahdeo",
+        "title": "VP Engineering",
+        "reports": [
+          {
+            "name": "Sofia Alvarez",
+            "title": "Engineering Manager - Platform",
+            "reports": [
+              {
+                "name": "Zara Hussain",
+                "title": "Tech Lead - Backend",
+                "reports": []
+              },
+              {
+                "name": "Wei Chen",
+                "title": "Senior Backend Engineer",
+                "reports": []
+              },
+              {
+                "name": "Rahul Verma",
+                "title": "Backend Engineer",
+                "reports": []
+              },
+              {
+                "name": "Olivia Brooks",
+                "title": "DevOps Engineer",
+                "reports": []
+              }
+            ]
+          },
+          {
+            "name": "Arjun Mehta",
+            "title": "Engineering Manager - Applications",
+            "reports": [
+              {
+                "name": "Daniel Park",
+                "title": "Tech Lead - Frontend",
+                "reports": []
+              },
+              {
+                "name": "Neha Gupta",
+                "title": "Senior Frontend Engineer",
+                "reports": []
+              },
+              {
+                "name": "Carlos Mendes",
+                "title": "Frontend Engineer",
+                "reports": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Liam Garcia",
+        "title": "Head of Research",
+        "reports": [
+          {
+            "name": "Elena Petrova",
+            "title": "Research Manager",
+            "reports": [
+              {
+                "name": "Yuki Tanaka",
+                "title": "Research Scientist",
+                "reports": []
+              },
+              {
+                "name": "Mohammed Saleh",
+                "title": "ML Scientist",
+                "reports": []
+              },
+              {
+                "name": "Grace O'Connor",
+                "title": "Applied Scientist",
+                "reports": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Mia Nguyen",
+        "title": "Head of Product",
+        "reports": [
+          {
+            "name": "Henry Thompson",
+            "title": "Director of Product",
+            "reports": [
+              {
+                "name": "Isha Rao",
+                "title": "Product Manager",
+                "reports": []
+              },
+              {
+                "name": "Jacob Morris",
+                "title": "Product Designer",
+                "reports": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Ethan Rossi",
+        "title": "Head of Operations",
+        "reports": [
+          {
+            "name": "Fatima Ali",
+            "title": "People Operations Manager",
+            "reports": [
+              {
+                "name": "Marcus Lee",
+                "title": "Recruiter",
+                "reports": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

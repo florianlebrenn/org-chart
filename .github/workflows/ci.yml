@@ -1,0 +1,88 @@
+# Tests : backend (ruff, pytest), logique JS (node --test), build, puis scénarios Playwright
+# sur l'application Docker réellement construite (et sur le fichier HTML autonome).
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  DO_NOT_TRACK: "1"
+  SCARF_ANALYTICS: "false"
+
+jobs:
+  backend:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e  # v10.3.2
+        with:
+          version: "0.13.5"
+          python-version: "3.12"
+          enable-cache: false
+      - name: Dépendances (figées par uv.lock)
+        working-directory: backend
+        run: uv sync --frozen
+      - name: ruff (analyse et format)
+        run: |
+          uv run --project backend --frozen ruff check --output-format=github .
+          uv run --project backend --frozen ruff format --check .
+      - name: pytest
+        working-directory: backend
+        run: uv run --frozen pytest -q
+
+  frontend:
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1  # v7.1.0
+        with:
+          node-version: "22"
+      - run: npm ci --no-audit --no-fund
+      - run: npx eslint src
+      - run: npm test
+      - run: npm run build
+      - run: npm run build:static
+      - name: static/organigramme.html est à jour
+        run: |
+          if ! cmp -s dist-static/index.html ../static/organigramme.html; then
+            echo "::error::static/organigramme.html ne correspond pas au code : lancez 'make static' et committez le fichier."
+            exit 1
+          fi
+
+  e2e:
+    needs: [backend, frontend]
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1  # v7.1.0
+        with:
+          node-version: "22"
+      - name: Instance de test (Docker, port 8081)
+        run: docker compose -p orgchart-test -f docker-compose.test.yml up -d --build --wait
+      - name: Playwright
+        working-directory: e2e
+        run: |
+          npm ci --no-audit --no-fund
+          npx playwright install --with-deps chromium
+          npx playwright test
+      - name: Journaux en cas d'échec
+        if: failure()
+        run: docker compose -p orgchart-test -f docker-compose.test.yml logs --tail=200

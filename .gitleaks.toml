@@ -1,0 +1,14 @@
+# Configuration gitleaks (lue automatiquement à la racine du dépôt).
+title = "organigramme"
+
+[extend]
+useDefault = true   # toutes les règles officielles
+
+# Exceptions limitées à des fichiers connus, sans secret, mais à forte entropie :
+[[allowlists]]
+description = "Empreintes d'intégrité npm, application construite (minifiée), sauvegarde chiffrée FICTIVE d'exemple"
+paths = [
+  '''(^|/)package-lock\.json$''',
+  '''^static/organigramme\.html$''',
+  '''^tools/sample-data/sauvegarde-chiffree-exemple\.json$''',
+]

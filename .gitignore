@@ -1,0 +1,93 @@
+# ------------------------------------------------------------------ données (confidentialité)
+# Jamais de vraies données dans le dépôt : bases, sauvegardes, exports, rapports d'audit.
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+organigramme-*.json
+organigramme-*.pdf
+organigramme-*.mmd
+_archives/
+.security-audit/
+gitleaks-report.json
+
+# ------------------------------------------------------------------ build / dépendances
+node_modules/
+dist/
+frontend/dist-static/
+e2e/test-results/
+e2e/playwright-report/
+e2e/blob-report/
+e2e/playwright/.cache/
+.vite/
+*.tsbuildinfo
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ------------------------------------------------------------------ Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+*.egg-info/
+
+# ------------------------------------------------------------------ secrets / environnement local
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# ------------------------------------------------------------------ macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+.TemporaryItems
+.DocumentRevisions-V100
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+Icon?
+
+# ------------------------------------------------------------------ Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+desktop.ini
+$RECYCLE.BIN/
+*.lnk
+*.stackdump
+
+# ------------------------------------------------------------------ Linux
+*~
+.directory
+.Trash-*
+.nfs*
+
+# ------------------------------------------------------------------ éditeurs / IDE
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*.sublime-workspace
+*.code-workspace
+.history/
+
+# ------------------------------------------------------------------ Office (fichiers de verrouillage ouverts)
+~$*
+.~lock.*#

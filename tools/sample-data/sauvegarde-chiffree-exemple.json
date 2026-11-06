@@ -1,0 +1,15 @@
+{
+ "format": "organigramme-sauvegarde-chiffree",
+ "version": 1,
+ "exported_at": "2026-11-06T10:00:00",
+ "kdf": {
+  "name": "PBKDF2-SHA256",
+  "iterations": 600000,
+  "salt": "Cp/Ky5vyi2TDfMDhiZpLGA=="
+ },
+ "cipher": {
+  "name": "AES-256-GCM",
+  "iv": "OY2vbvi+PhoukC/t"
+ },
+ "data": "f+zjiKPHmyjWk83GzAaKO4o+1kQgsqdTiQiCFnYnIrEpkmjyZWk/YA96hS4VsR+hXTFd4yl31YxnYL98svYjvEPMLs/Bbo2L/OOiG1xot4dipfiLP1dmqe1cjcSwjUeL5oLO7pR9MTIqBne+ST8nwl5m3MI33Vf07cfBeXgac9IOw8Iuec3jN6X6MP2dYqUUDTpmbbizhknUt2Oo7NrkiwYf9pDi3WYsqLGr7YpIG3vC8KLC0LoBXBLywDW3D6OS2tDRdgblGqJK2ufVurlyGOMmQMwZ33juwp6/If0/i/7XS3e1hwjfXRiOj+LT+GmDwLenPd3NPrgw19nhOuvGsyHBd87V5tM60JHpA6Fgeb9PeGL+06OjORNidfzzn6rGTpN4RGXGcIKiUQTc2g8iQr+9fN7NHDV7BVqpAKQ7GyEz4sJnc/oshR1G4pA6We/aAspp7WNh37LzooFOladhT/V/l8z5HBMgflq9zZZgtQAM1Lkcgetx/ilQVXQL086+v53iSU149xfPeofhaNrTrMCh2e10+cb06d/eWyLrCv3D7AUHkgdaC7G2VzGLQfO4m51AD94OeE0yzV5849zIi2pDI3DJWSpnuVRV4sfpaWXjmwZjal4DpY9JwpTXVAYqgWMi6cfZeS8AZX/MglASOvnOXPB70Zluf6CFKOsH8g4PomlRhq794ZhYAds3ttOYCb2BP4g0z0HnjhG4rtAoMSjBhnef05Glo4W7f65TJTCIAUCCjo+uOTZ+Z5issaPVO9vQNwae81YOf3uNbkRW66lqO2pHoXkaipyDH4aAmiqUgqqo7Xv9zGwOXy8wLdTDCcxG0fZ9fxz4XH7JTrEDfUuuW5N9FYQj6/ZvDc6CpJyvXp73mXC8EDhPCXJsyPC3t0hG68M/CqrIeL4nx1LQATaM/EXZoPd/QGOGUTBc7ijZrN4AClkTXIzThc3kDkKWemnLmnLFx8LeNbkn/otDfaZWk7p4g5IdAIsIXe4SHXaUQabJP+6hXXKuofHp6ny88snGWicVKZ3ZJEzhPP9vSuZWDnuCNQw3DthfCEYhLEMx0Lvy/RIVsMJl1cgGI5g="
+}

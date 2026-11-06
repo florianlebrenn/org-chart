@@ -1,0 +1,26 @@
+Employee,Manager,Title
+Ava Patel,,Chief Executive Officer
+Noah Kim,Ava Patel,Chief Technology Officer
+Vinit Shahdeo,Ava Patel,VP Engineering
+Liam Garcia,Ava Patel,Head of Research
+Mia Nguyen,Ava Patel,Head of Product
+Ethan Rossi,Ava Patel,Head of Operations
+Sofia Alvarez,Vinit Shahdeo,Engineering Manager - Platform
+Arjun Mehta,Vinit Shahdeo,Engineering Manager - Applications
+Zara Hussain,Sofia Alvarez,Tech Lead - Backend
+Wei Chen,Sofia Alvarez,Senior Backend Engineer
+Rahul Verma,Sofia Alvarez,Backend Engineer
+Olivia Brooks,Sofia Alvarez,DevOps Engineer
+Daniel Park,Arjun Mehta,Tech Lead - Frontend
+Neha Gupta,Arjun Mehta,Senior Frontend Engineer
+Carlos Mendes,Arjun Mehta,Frontend Engineer
+Elena Petrova,Liam Garcia,Research Manager
+Yuki Tanaka,Elena Petrova,Research Scientist
+Mohammed Saleh,Elena Petrova,ML Scientist
+Grace O'Connor,Elena Petrova,Applied Scientist
+Henry Thompson,Mia Nguyen,Director of Product
+Isha Rao,Henry Thompson,Product Manager
+Jacob Morris,Henry Thompson,Product Designer
+Fatima Ali,Ethan Rossi,People Operations Manager
+Marcus Lee,Fatima Ali,Recruiter
+Nina Kowalski,Noah Kim,Security Lead
