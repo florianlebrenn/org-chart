@@ -182,7 +182,7 @@ Détails, menaces couvertes et limites : [`SECURITY.md`](SECURITY.md).
 
 | Commande | Ce qu'elle fait |
 |---|---|
-| `make hooks` | installe les contrôles avant commit : gitleaks (secrets), données personnelles, ruff, bandit, clés privées, gros fichiers (dépôt git requis) |
+| `make hooks` | installe les contrôles avant commit : gitleaks (secrets), données personnelles, ruff, bandit, clés privées, gros fichiers (dépôt git et [uv](https://docs.astral.sh/uv/) requis : `brew install uv`) |
 | `make security` | dans Docker : gitleaks, données personnelles, pip-audit (sur `uv.lock`), bandit, npm audit, hadolint |
 
 Sur GitHub, la CI (`.github/workflows/`) relance tests et contrôles à chaque PR, et chaque semaine. À activer dans les

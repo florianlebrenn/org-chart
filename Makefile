@@ -116,11 +116,15 @@ e2e-docker: static e2e-stack-up ## Scénarios sans fenêtre, dans Docker (sans N
 GITLEAKS_IMG := ghcr.io/gitleaks/gitleaks:v8.30.1
 HADOLINT_IMG := hadolint/hadolint:v2.15.1
 
-hooks: ## Installer les contrôles avant commit (gitleaks, données personnelles, bandit…) — dépôt git requis
+# pre-commit est installé avec uv (le Python fourni par macOS est trop ancien) : brew install uv
+PRE_COMMIT_VERSION := 4.7.0
+
+hooks: ## Installer les contrôles avant commit (gitleaks, données personnelles, ruff, bandit…) — git et uv requis
 	@test -d .git || { echo "Initialisez d'abord le dépôt : git init"; exit 1; }
-	@command -v pre-commit >/dev/null 2>&1 || pipx install pre-commit==4.7.0 || python3 -m pip install --user pre-commit==4.7.0
-	pre-commit install
-	pre-commit run --all-files
+	@command -v uv >/dev/null 2>&1 || { echo "uv est nécessaire : brew install uv  (ou https://docs.astral.sh/uv/), puis relancez make hooks."; exit 1; }
+	uv tool install --quiet pre-commit==$(PRE_COMMIT_VERSION)
+	"$$(uv tool dir --bin)/pre-commit" install
+	"$$(uv tool dir --bin)/pre-commit" run --all-files
 
 security: ## Contrôles de sécurité (dans Docker) : secrets, données personnelles, dépendances, code, Dockerfiles
 	@if [ -d .git ]; then \
