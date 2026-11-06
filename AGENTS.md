@@ -362,6 +362,13 @@ npx skills add https://github.com/cloudflare/security-audit-skill --skill securi
 - Après modification du frontend : `make static` pour régénérer `static/organigramme.html`.
 - **Changement sensible** (import, API, stockage, Docker, dépendances) : audit de sécurité ciblé (§7) et correction des constats.
 - **Contrôles avant commit** : `make hooks` (une fois) ; ne jamais contourner avec `--no-verify`. `make security` avant une publication.
+- **Messages de commit** : format [Conventional Commits](https://www.conventionalcommits.org/fr/) (compatible
+  semantic-release) : `type(portée): message court`, à l'impératif, en minuscules, sans point final, 72 caractères max.
+  Types : `feat` (fonctionnalité), `fix` (correction), `docs`, `test`, `refactor`, `perf`, `style`, `build` (Makefile,
+  Docker, dépendances), `ci`, `chore`. Portées usuelles : `import`, `org`, `pdf`, `vault`, `crypto`, `api`, `ui`,
+  `static`, `e2e`, `make`, `docker`, `deps`, `agents`. Changement incompatible : `feat(api)!: …` et un pied
+  `BREAKING CHANGE: …`. Exemples : `fix(import): accepter les en-têtes avec espaces insécables`,
+  `build(deps): monter fastapi en 0.162.0`.
 - **Avant de rendre la main** : `make test` vert, puis vérifier qu'aucune donnée réelle ni capture n'a été ajoutée
   (`git status`), et que `README.md` / ce fichier sont à jour si le comportement a changé.
 
