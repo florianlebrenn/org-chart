@@ -1,5 +1,5 @@
 # --- Étape 1 : build de l'app React (Vite) ---
-FROM node:22-alpine AS build
+FROM node:26-alpine AS build
 WORKDIR /app
 # aucune télémétrie, même à l'installation des paquets
 ENV DO_NOT_TRACK=1 SCARF_ANALYTICS=false NEXT_TELEMETRY_DISABLED=1
